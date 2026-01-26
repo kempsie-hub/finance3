@@ -1,0 +1,24 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="kempegowdafs:8" author="BOB">
+        <sql>
+            <![CDATA[
+ insert into expense_users (email, username, name, password)
+values ('kempegowdanagaraj14@gmail.com', 'kempegowda','Kempegowda',
+'$2a$10$MyjBSYE9dzjrmtz43Fn3se23.8Iq4F6iSL31etBnJNpX47mAv5yra');
+
+INSERT INTO expense_roles (name) VALUES ('USER');
+
+INSERT INTO expense_roles (name) VALUES ('ADMIN');
+
+
+
+  ]]>
+
+        </sql>
+
+    </changeSet>
+</databaseChangeLog>

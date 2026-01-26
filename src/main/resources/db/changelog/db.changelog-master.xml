@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <include file="db/changelog/1_create_expense_type_table.sql"/>
+    <include file="db/changelog/2_insert_expense_type_data.sql"/>
+    <include file="db/changelog/3_users_and_roles_table.sql"/>
+    <include file="db/changelog/4_insert_expense_users.xml"/>
+    <include file="db/changelog/4a_insert_expense_users.xml"/>
+    <include file="db/changelog/5_create_user_expense_type_ids.xml"/>
+    <include file="db/changelog/6_create_expense_table.xml"/>
+
+</databaseChangeLog>

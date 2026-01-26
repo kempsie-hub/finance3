@@ -1,0 +1,33 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="kempegowdafs:9" author="BOB">
+        <sql>
+            <![CDATA[
+
+CREATE TABLE user_expense_type_subscription (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    expense_type BIGINT,
+    user_id BIGINT,
+    subscription_id VARCHAR(100) NOT NULL,
+    description VARCHAR(255),
+    created_by VARCHAR(50),
+    updated_by VARCHAR(50),
+    created_date TIMESTAMP,
+    updated_date TIMESTAMP,
+    FOREIGN KEY (expense_type) REFERENCES expense_type(id),
+    FOREIGN KEY (user_id) REFERENCES expense_users(id),
+    CONSTRAINT user_expense_type_subscription_unique UNIQUE (expense_type, user_id, subscription_id)
+);
+
+  ]]>
+
+        </sql>
+        <rollback>s
+            DROP TABLE user_expense_type_subscription;
+
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
