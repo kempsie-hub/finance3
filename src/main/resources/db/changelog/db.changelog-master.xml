@@ -12,5 +12,6 @@
     <include file="db/changelog/4a_insert_expense_users.xml"/>
     <include file="db/changelog/5_create_user_expense_type_ids.xml"/>
     <include file="db/changelog/6_create_expense_table.xml"/>
+    <include file="db/changelog/8_update_root_user_password.sql"/>
 
 </databaseChangeLog>

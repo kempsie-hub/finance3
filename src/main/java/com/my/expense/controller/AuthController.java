@@ -1,8 +1,10 @@
 package com.my.expense.controller;
 
+import com.my.expense.dto.ApiResponseDTO;
 import com.my.expense.dto.LoginDTO;
 import com.my.expense.dto.RegisterDTO;
 import com.my.expense.service.AuthService;
+import com.my.expense.util.ResponseUtil;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +23,14 @@ public class AuthController {
 
     @CrossOrigin("*")
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginDTO loginDTO) {
-        return ResponseEntity.ok(registrationService.loginUser(loginDTO));
+    public ResponseEntity<ApiResponseDTO> login(@RequestBody LoginDTO loginDTO) {
+        return ResponseEntity.ok(
+                ResponseUtil.success(
+                        registrationService.loginUser(loginDTO),
+                        LoginDTO.builder()
+                                .usernameOrEmail(loginDTO.getUsernameOrEmail())
+                                .build()
+                        )
+        );
     }
 }
