@@ -1,3 +1,4 @@
+Om Namah Shivaya
 # Docker build & run (production)
 
 This project uses a multi-stage Dockerfile located at the repository root to produce a small, production-ready image.
